@@ -1,11 +1,12 @@
 {
   "name": "react-3g",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "基于react开发的基本组件库",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel lib -d build",
+    "build:watch": "babel lib -w -d build",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
     "prepublish": "npm run build"
