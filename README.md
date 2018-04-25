@@ -74,11 +74,11 @@
 
 ### 组件
 
-* Button组件
+##### Button组件
 >字段：type / icon / shape / size
 
-**type：['success','fail','loading','warning','danger','disabled']**
-**icon: ['download','back','next','close']**
-**size: ['big','mid','small']**
-**shape: ['circle']**
+* **type：['success','fail','loading','warning','danger','disabled']**
+* **icon: ['download','back','next','close']**
+* **size: ['big','mid','small']**
+* **shape: ['circle']**
     

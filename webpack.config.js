@@ -93,8 +93,15 @@ module.exports = {
   resolve: {
     extensions: ['.js','jsx','.less']
   },
+  devServer: {
+    contentBase: './build',
+    hot: true
+  },
   plugins: [
-    new ExtractTextPlugin(`css/index.css`, {allChunks: true})
+    new ExtractTextPlugin(`css/index.css`, {allChunks: true}),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   devtool: "source-map"
 };
