@@ -6,6 +6,7 @@
 >  了解package.json文件各个字段的意义，重点**版本号**、**Scripts**
 
 * 项目本地运行
+**当前是webpack编译，稍后会添加webpack 编译 watch**
 ```javaScript
     git clone git@github.com:ZJH9Rondo/React-3G.git
 
@@ -13,7 +14,7 @@
 
     npm install
 
-    npm run build:watch
+    npm run build
 ```
 
 > 这里还需要开启一个后台，这个后台是用于在本地测试NPM包的实际效果
