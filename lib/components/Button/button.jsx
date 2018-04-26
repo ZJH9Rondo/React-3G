@@ -14,6 +14,7 @@ export default class Button extends Component {
     }
 
     componentWillMount() {
+        console.log(this.props);
         this.setState({
             type: this.props.type || 'normal',
             size: this.props.size || 'mid',
@@ -24,7 +25,7 @@ export default class Button extends Component {
 
     render() {
         const {type,shape,size,icon} = this.state;
-
+        console.log(type);
         const buttonClass = classNames({
             [`${size}`]: size,
             [`${type}`]: type,

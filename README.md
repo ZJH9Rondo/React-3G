@@ -1,4 +1,23 @@
-# 基于React开发的基本组件库
+# React-3G —— 基于React开发的基本组件库
+开发文档
+
+### 项目目录结构
+```javaScript
+    React-3G
+        build
+        lib
+            components
+                ...
+            styles
+            index.js
+```
+* build：存储 lib 中编写好编译之后输出的代码
+* lib：存储项目的原始源代码
+    components：组件库的组件代码
+    styles：公用的样式文件，每个组件对应的样式，写到 components 下各个组件对应的文件夹
+    index.js：最终对外暴露的组件导出接口，不理解的，去看 export 什么意思。
+
+------
 
 ### 本地开发NPM摘要
 **开发前必须弄清楚以下再进行**
@@ -52,33 +71,19 @@
 
 关于软链接的设置不懂的看[这里](https://blog.ymfe.org/%E5%80%9F%E5%8A%A9%E8%BD%AF%E9%93%BE%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91npm%E6%A8%A1%E5%9D%97/)
 
+* 可使用npm link命令[npm link](https://docs.npmjs.com/cli/link)
+
 * 弄清楚组件怎么划分，react 怎么利用组件化的，不难，动起手来。
 
 * 弄清楚 export import 以及常见的ES6知识
 
-### 项目目录结构
-```javaScript
-    React-3G
-        build
-        lib
-            components
-                ...
-            styles
-            index.js
-```
-* build：存储 lib 中编写好编译之后输出的代码
-* lib：存储项目的原始源代码
-    components：组件库的组件代码
-    styles：公用的样式文件，每个组件对应的样式，写到 components 下各个组件对应的文件夹
-    index.js：最终对外暴露的组件导出接口，不理解的，去看 export 什么意思。
+**开发事项**
+> 组件可按需引用
+> 需引用build目录下的css文件
+
 
 ### 组件
+组件信息见Introduction.md
 
-##### Button组件
->字段：type / icon / shape / size
 
-* **type：['success','fail','loading','warning','danger','disabled']**
-* **icon: ['download','back','next','close']**
-* **size: ['big','mid','small']**
-* **shape: ['circle']**
-    
+
