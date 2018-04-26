@@ -85,5 +85,10 @@
 ### 组件
 组件信息见Introduction.md
 
+### Class命名规则
+* mb- 开头
+* mb-[标签名]-[对应样式],如mb-btn-large
+* 可添加默认相同属性,如所有按钮样式都有mb-btn这个className
+
 
 
