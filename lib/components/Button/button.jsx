@@ -6,19 +6,19 @@ export default class Button extends Component {
     constructor (props) {
         super(props);
         this.state={
-            type: 'mb-btn-normal',
-            size: 'mb-btn-mid',
-            shape: 'mb-btn-default',
-            icon: 'mb-btn-null'
+            type: 'success',
+            size: 'mid',
+            shape: 'default',
+            icon: 'null'
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
-            type: this.props.type || 'mb-btn-normal',
-            size: this.props.size || 'mb-btn-mid',
-            shape: this.props.shape || 'mb-btn-default',
-            icon: this.props.icon || 'mb-btn-null'
+            type: this.props.type || 'success',
+            size: this.props.size || 'mid',
+            shape: this.props.shape || 'default',
+            icon: this.props.icon || 'null'
         });
     }
 
@@ -26,10 +26,10 @@ export default class Button extends Component {
         const {type,shape,size,icon} = this.state;
         console.log(type);
         const buttonClass = classNames({
-            [`${size}`]: size,
-            [`${type}`]: type,
-            [`${shape}`]: shape,
-            [`${icon}`]: icon
+            [`mb-${size}`]: size,
+            [`mb-${type}`]: type,
+            [`mb-${shape}`]: shape,
+            [`mb-${icon}`]: icon
         });
         return (
             <div>

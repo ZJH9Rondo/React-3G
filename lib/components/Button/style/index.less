@@ -1,27 +1,34 @@
 @import '../../../assets/styles/veriable.less';
-.mb-btn-mid,.mb-btn-small{
+.mb-large,.mb-mid,.mb-small{
     letter-spacing: 0.2rem;
-    .px2rem(font-size,16);
 }
-.mb-btn-mid{
+.mb-large{
+    .px2rem(width,350);
+    .px2rem(height,170);
+    .px2rem(border-radius,20);
+    font-size: 16px;
+}
+.mb-mid{
     .px2rem(width, 250);
     .px2rem(height,150);
     .px2rem(border-radius,20);
+    font-size: 13px;    
 }
-.mb-btn-small{
+.mb-small{
     .px2rem(width,200);
-    .px2rem(height,100);
-    .px2rem(border-radius,10);
+    .px2rem(height,120);
+    .px2rem(border-radius,20);
+    font-size: 10px;        
 }
-.mb-btn-success{
+.mb-success{
     color: aliceblue;
     background-color: rgb(24,120,255);
 }
-.mb-btn-danger{
+.mb-danger{
     color: aliceblue;
     background-color: rgb(155, 30, 30);
 }
-.mb-btn-disabled{
+.mb-disabled{
     color: aliceblue;
     background-color: rgb(88, 88, 88);
 }
