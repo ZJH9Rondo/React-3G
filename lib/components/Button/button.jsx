@@ -6,16 +6,16 @@ export default class Button extends Component {
     constructor (props) {
         super(props);
         this.state={
-            type: 'normal',
+            type: 'success',
             size: 'mid',
             shape: 'default',
             icon: 'null'
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
-            type: this.props.type || 'normal',
+            type: this.props.type || 'success',
             size: this.props.size || 'mid',
             shape: this.props.shape || 'default',
             icon: this.props.icon || 'null'
@@ -26,10 +26,10 @@ export default class Button extends Component {
         const {type,shape,size,icon} = this.state;
 
         const buttonClass = classNames({
-            [`${size}`]: size,
-            [`${type}`]: type,
-            [`${shape}`]: shape,
-            [`${icon}`]: icon
+            [`mb-${size}`]: size,
+            [`mb-${type}`]: type,
+            [`mb-${shape}`]: shape,
+            [`mb-${icon}`]: icon
         });
         return (
             <div>
