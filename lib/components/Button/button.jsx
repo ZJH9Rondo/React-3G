@@ -24,7 +24,7 @@ export default class Button extends Component {
 
     render() {
         const {type,shape,size,icon} = this.state;
-
+        console.log(type);
         const buttonClass = classNames({
             [`mb-${size}`]: size,
             [`mb-${type}`]: type,
