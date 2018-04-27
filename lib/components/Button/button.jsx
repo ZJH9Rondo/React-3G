@@ -26,10 +26,10 @@ export default class Button extends Component {
         const {type,shape,size,icon} = this.state;
         console.log(type);
         const buttonClass = classNames({
-            [`mb-${size}`]: size,
-            [`mb-${type}`]: type,
-            [`mb-${shape}`]: shape,
-            [`mb-${icon}`]: icon
+            [`mb-btn-${size}`]: size,
+            [`mb-btn-${type}`]: type,
+            [`mb-btn-${shape}`]: shape,
+            [`mb-btn-${icon}`]: icon
         });
         return (
             <div>
