@@ -4,7 +4,7 @@
   "description": "基于react开发的基本组件库",
   "main": "build/main.js",
   "files": [
-    "build"    
+    "build"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -55,6 +55,7 @@
     "less-loader": "^4.1.0",
     "postcss-loader": "^2.1.4",
     "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.2",
