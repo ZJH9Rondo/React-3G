@@ -16,7 +16,6 @@ module.exports = {
     publicPath: '/',
     libraryTarget: "umd",
     filename: `[name]${isDev ? '' : '_[chunkhash]'}.js`,
-    chunkFilename: `[name]${isDev ? '' : '_[chunkhash]'}.js`,
   },
   module: {
     rules: [
@@ -88,9 +87,13 @@ module.exports = {
           test: /\.json$/,
           use: 'json-loader'
       },
-  ],
+    ],
   },
   resolve: {
+    modules: [
+        "node_modules",
+        path.resolve(__dirname,"lib")
+    ],
     extensions: ['.js','jsx','.less']
   },
   devServer: {

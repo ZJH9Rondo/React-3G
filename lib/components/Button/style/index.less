@@ -1,7 +1,18 @@
 @import '../../../assets/styles/veriable.less';
+
+/*处理在 chrome 和 firefox 下的默认样式*/
+button:focus{
+    outline: none;
+    outline: 0;
+}
+button::-moz-focus-inner{
+    border: 0;
+}
+
 .mb-btn-large,.mb-btn-mid,.mb-btn-small{
     letter-spacing: 0.2rem;
 }
+
 .mb-btn-large{
     .px2rem(width,350);
     .px2rem(height,170);
@@ -22,13 +33,16 @@
 }
 .mb-btn-success{
     color: aliceblue;
+    border: 0 solid rgb(24,120,255); 
     background-color: rgb(24,120,255);
 }
 .mb-btn-danger{
     color: aliceblue;
+    border:0 solid rgb(155, 30, 30); 
     background-color: rgb(155, 30, 30);
 }
 .mb-btn-disabled{
     color: aliceblue;
+    border: 0 solid rgb(88, 88, 88);
     background-color: rgb(88, 88, 88);
 }
