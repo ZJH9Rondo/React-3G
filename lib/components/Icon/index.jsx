@@ -8,7 +8,7 @@ export default class Icon extends Component{
 
     render() {
         const { type } = this.props;
-        const iconType = 'icon icon-'+type;
+        const iconType = type;
 
         return (
             <i className={iconType}></i>

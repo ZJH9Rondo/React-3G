@@ -15,7 +15,7 @@ module.exports = {
     path: path.join(__dirname, '/build'),
     publicPath: '/',
     libraryTarget: "umd",
-    filename: `[name]${isDev ? '' : '_[chunkhash]'}.js`,
+    filename: `[name].js`,
   },
   module: {
     rules: [
@@ -98,12 +98,12 @@ module.exports = {
   },
   devServer: {
     contentBase: './build',
-    hot: true
+    //hot: true
   },
   plugins: [
     new ExtractTextPlugin(`css/index.css`, {allChunks: true}),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
   devtool: "source-map"

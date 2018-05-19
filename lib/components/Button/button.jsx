@@ -32,11 +32,12 @@ export default class Button extends Component {
             [`mb-btn-${type}`]: type,
             [`mb-btn-${shape}`]: shape
         });
-        const iconType = loading ? 'loading' : icon;
-        const mbIcon = iconType ? <Icon type={iconType} /> : null;
+        const iconType = loading ? 'loading' : `mb-icon-${size} icon-${icon}`;
+        const mbIcon = icon ? <Icon type={ iconType } /> : null; 
+        console.log(iconType);
         return (
             <div>
-                <button className={buttonClass}>{mbIcon}{this.props.children}</button>
+                <button className={ buttonClass }>{ mbIcon }{ this.props.children }</button>
             </div>
         )
     }

@@ -1,16 +1,36 @@
 @import '../../../assets/styles/veriable.less';
-.icon{
-    .px2rem(width,50);
-    .px2rem(height,50);
-    display: inline-block;
-    .px2rem(margin-left,20);
-    .px2rem(margin-right,20);    
+.mb-icon-small,.mb-icon-mid,.mb-icon-large{
+    float: left;
+    display: block;
     background-size: cover;
+    transform: rotateX(-50%);
+}
+
+.mb-icon-small{
+    .px2rem(width,80);
+    .px2rem(height,80);
+    .px2rem(top,40);
+}
+.mb-icon-large{
+    .px2rem(width,120);
+    .px2rem(height,120);
+    .px2rem(top,60);  
+}
+.mb-icon-mid{
+    .px2rem(width,100);
+    .px2rem(height,100);
+    .px2rem(top,50);  
 }
 
 //loading-icon
-.icon-loading{ background-image: url('../../../assets/images/loading.png'); }
+.icon-loading{ 
+    background-image: url('../../../assets/images/loading.png');
+}
 //user-icon
-.icon-user{ background-image: url('../../../assets/images/user.png'); }
+.icon-user{
+    background-image: url('../../../assets/images/user.png');
+}
 //close-icon
-.icon-close{ background-image: url('../../../assets/images/close.png'); }
+.icon-close{
+    background-image: url('../../../assets/images/close.png');
+}
