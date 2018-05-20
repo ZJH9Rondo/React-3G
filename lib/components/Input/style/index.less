@@ -1,27 +1,53 @@
 @import '../../../assets/styles/veriable.less';
+
+/*
+* input输入框前缀表
+*/
+.mb-inputPre{
+    .px2rem(min-width,200);
+    text-align: center;
+    border:1px solid #D9D9D9;    
+    background-color: #fafafa;
+    border-radius: 3px 0 0 3px;
+    color: rgba(0,0,0,.65);
+}
+
+.inputPre-small{
+    .px2rem(height,100);
+    .px2rem(padding,20);
+    font-size: 12px;
+}
+.inputPre-mid{
+    .px2rem(height,150);
+    .px2rem(padding,44);    
+    font-size: 14px;
+}
+.inputPre-large{
+    .px2rem(padding,53);
+    .px2rem(height,180);
+    font-size: 16px;
+}
+
 .mb-input{
     border:1px solid #D9D9D9;
-    letter-spacing: 0rem;
-    text-indent: 10px;
-    border-radius: .1rem;
-    .px2rem(font-size,16);
-    .px2rem(width,500);
+    letter-spacing: 0.1rem;
+    .px2rem(width,1000);
+    border-radius: 0 3px 3px 0;
+    .px2rem(text-indent,20);
 }
 .mb-input:hover{
     border:1px solid #46A4FC;
 }
 
-
-
-
-
-
 .mb-input-small{
-    .px2rem(height,60);
+    .px2rem(height,100);
+    font-size: 12px;    
 }
 .mb-input-mid{
-    .px2rem(height,80);
+    .px2rem(height,150);
+    font-size: 14px;
 }
 .mb-input-large{
-    .px2rem(height,100);
+    .px2rem(height,180);
+    font-size: 16px;
 }

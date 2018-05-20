@@ -7,30 +7,35 @@ export default class Input extends Component {
         super(props);
         this.state={
             size: 'mb-input-mid',
-            placeholder: ''
+            placeholder: '',
+            defaultValue: null
         };
     }
 
     componentWillMount() {
-        console.log(this.props);
         this.setState({
             size: this.props.size || 'mb-input-mid',
-            placeholder: this.props.placeholder || ''
+            placeholder: this.props.placeholder || '',
+            defaultValue: this.props.defaultValue || null
         });
     }
 
     render() {
-        const {size, placeholder} = this.state;
-        const defaultClassName = 'mb-input ';
-        console.log(this.state.placeholder);
-        const inputClass = classNames({
-            [`${size}`]: size,
+        const { size, placeholder, defaultValue } = this.state;
+        const inputState = classNames({
+            [`mb-input-${size}`]: size,
         });
+        const inputClass = 'mb-input ' + inputState;
+        const inputPreClass = `mb-inputPre inputPre-${size}`;
+        /**
+         * input 输入框时候携带前缀默认值
+         */
+        const inputPre = defaultValue ? <span className= {inputPreClass}>{ defaultValue }</span> : null; 
 
-        console.log(defaultClassName);
         return (
             <div>
-                <input className={defaultClassName+inputClass} placeholder={this.state.placeholder}></input>
+                { inputPre }
+                <input className={inputClass} placeholder={this.state.placeholder}></input>
             </div>
         )
     }
