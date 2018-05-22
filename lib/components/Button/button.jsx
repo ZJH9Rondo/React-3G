@@ -9,7 +9,6 @@ export default class Button extends Component {
         this.state={
             type: 'success',
             size: 'mid',
-            shape: 'default',
             icon: 'null',
             loading: false
         };
@@ -19,7 +18,6 @@ export default class Button extends Component {
         this.setState({
             type: this.props.type || 'success',
             size: this.props.size || 'mid',
-            shape: this.props.shape || 'default',
             icon: this.props.icon || null,
             loading: this.props.loading || false
         });
@@ -30,14 +28,18 @@ export default class Button extends Component {
         const buttonClass = classNames({
             [`mb-btn-${size}`]: size,
             [`mb-btn-${type}`]: type,
-            [`mb-btn-${shape}`]: shape
         });
-        const iconType = loading ? 'loading' : `mb-icon-${size} icon-${icon}`;
-        const mbIcon = icon ? <Icon type={ iconType } /> : null; 
-        console.log(iconType);
+        const iconType = loading ? 'loading' : `${icon}`;
+        const disabled = (type == "disabled") ? "disabled" : null;
+        const mbIcon = icon ? <Icon type={ iconType } size={ size }/> : null; 
+        /**
+         * event 参数捕获
+        */
+        const onClick = this.props.onClick ? this.props.onClick : null;
+
         return (
             <div>
-                <button className={ buttonClass }>{ mbIcon }{ this.props.children }</button>
+                <button className={ buttonClass } onClick = { onClick } disabled={ disabled }>{ mbIcon }{ this.props.children }</button>
             </div>
         )
     }

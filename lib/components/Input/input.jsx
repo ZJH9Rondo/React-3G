@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
 import classNames from 'classnames';
+import Icon from '../Icon/index.jsx';
+
 require('./style/index.less');
 
 export default class Input extends Component {
@@ -8,7 +10,7 @@ export default class Input extends Component {
         this.state={
             size: 'mb-input-mid',
             placeholder: '',
-            defaultValue: null
+            addonPre: null
         };
     }
 
@@ -16,12 +18,12 @@ export default class Input extends Component {
         this.setState({
             size: this.props.size || 'mb-input-mid',
             placeholder: this.props.placeholder || '',
-            defaultValue: this.props.defaultValue || null
+            addonPre: this.props.addonPre || null
         });
     }
 
     render() {
-        const { size, placeholder, defaultValue } = this.state;
+        const { size, placeholder, addonPre } = this.state;
         const inputState = classNames({
             [`mb-input-${size}`]: size,
         });
@@ -30,12 +32,28 @@ export default class Input extends Component {
         /**
          * input 输入框时候携带前缀默认值
          */
-        const inputPre = defaultValue ? <span className= {inputPreClass}>{ defaultValue }</span> : null; 
+        const inputPre = addonPre ? <span className= {inputPreClass}>{ addonPre }</span> : null; 
+
+        /**
+         * event 事件处理
+        */
+        let { onChange, onBlur } = this.props;
+        onChange = onChange ? onChange : null;
+        onBlur = onBlur ? onBlur : null;
+        
+        /**
+         * input 内嵌Icon
+        */
+        const prefix = this.props.prefix ? <span className="mb-input-prefix">{ this.props.prefix }</span> : null; 
 
         return (
-            <div>
+            <div className='mb-input-container'>
                 { inputPre }
-                <input className={inputClass} placeholder={this.state.placeholder}></input>
+                { prefix }
+                <input className = { inputClass } 
+                onChange = { onChange }
+                onBlur = { onBlur }
+                placeholder={ placeholder }></input>
             </div>
         )
     }
