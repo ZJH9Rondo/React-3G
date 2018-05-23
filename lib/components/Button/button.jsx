@@ -9,8 +9,7 @@ export default class Button extends Component {
         this.state={
             type: 'success',
             size: 'mid',
-            icon: 'null',
-            loading: false
+            icon: 'null'
         };
     }
 
@@ -18,18 +17,20 @@ export default class Button extends Component {
         this.setState({
             type: this.props.type || 'success',
             size: this.props.size || 'mid',
-            icon: this.props.icon || null,
-            loading: this.props.loading || false
+            icon: this.props.icon || null
         });
     }
 
     render() {
-        const { type,shape,size,icon,loading } = this.state;
+        const { type,shape,size,icon } = this.state;
         const buttonClass = classNames({
             [`mb-btn-${size}`]: size,
             [`mb-btn-${type}`]: type,
         });
-        const iconType = loading ? 'loading' : `${icon}`;
+        /**
+         * button-status 是否为 loading ,由 icon 字段决定
+        */
+        const iconType = (icon == 'loading') ? 'loading' : `${icon}`;
         const disabled = (type == "disabled") ? "disabled" : null;
         const mbIcon = icon ? <Icon type={ iconType } size={ size }/> : null; 
         /**
