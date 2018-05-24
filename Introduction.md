@@ -73,12 +73,13 @@ Icon 类别支持
     import 'react-3g/build/css/index.css'; // 组件全局 Css，建议项目使用中全局引用一次即可
 
     // 组件使用
-    <Input prefix="" placeholder="" addonPre="" onChange="" onBlur=""/>
+    <Input type="" prefix="" placeholder="" addonPre="" onChange="" onBlur=""/>
 ```
 
 * **Input组件字段说明**
 ```javascript
     {
+        type: "Input组件真实DOM 的type，默认为 type=”text“ ",
         prefix: "Input内嵌Icon，字段支持传入设置与 Icon 一致",
         placeholder："Input组件设置默认 tips，与 input 中的 placeholder 一致",
         addonPre："Input 输入框前缀默认值设置",

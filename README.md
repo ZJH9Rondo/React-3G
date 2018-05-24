@@ -83,7 +83,7 @@
 
 
 ### 组件
-组件信息见Introduction.md
+组件信息见[Introduction.md](https://github.com/ZJH9Rondo/React-3G/blob/master/Introduction.md)
 
 ### Class命名规则
 * mb- 开头

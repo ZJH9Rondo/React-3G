@@ -15,9 +15,9 @@ export default class Button extends Component {
 
     componentDidMount() {
         this.setState({
-            type: this.props.type || 'success',
-            size: this.props.size || 'mid',
-            icon: this.props.icon || null
+            type: this.props.type || this.state.type,
+            size: this.props.size || this.state.size,
+            icon: this.props.icon || this.state.icon
         });
     }
 

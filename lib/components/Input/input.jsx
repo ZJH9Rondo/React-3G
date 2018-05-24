@@ -8,6 +8,7 @@ export default class Input extends Component {
     constructor (props) {
         super(props);
         this.state={
+            type: 'text',
             size: 'mb-input-mid',
             placeholder: '',
             addonPre: null
@@ -16,14 +17,15 @@ export default class Input extends Component {
 
     componentWillMount() {
         this.setState({
-            size: this.props.size || 'mb-input-mid',
-            placeholder: this.props.placeholder || '',
-            addonPre: this.props.addonPre || null
+            type: this.props.type || this.state.props,
+            size: this.props.size || this.state.size,
+            placeholder: this.props.placeholder || this.state.placeholder,
+            addonPre: this.props.addonPre || this.state.addonPre
         });
     }
 
     render() {
-        const { size, placeholder, addonPre } = this.state;
+        const { type, size, placeholder, addonPre } = this.state;
         const inputState = classNames({
             [`mb-input-${size}`]: size,
         });
@@ -51,6 +53,7 @@ export default class Input extends Component {
                 { inputPre }
                 { prefix }
                 <input className = { inputClass } 
+                type = { type }
                 onChange = { onChange }
                 onBlur = { onBlur }
                 placeholder={ placeholder }></input>
