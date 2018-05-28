@@ -1,7 +1,8 @@
 import React,{ Component } from 'react';
 import Icon from '../Icon/index.jsx';
 import classNames from 'classnames';
-require('./style/index.less');
+
+import './style/index.less';
 
 export default class Button extends Component {
     constructor (props) {

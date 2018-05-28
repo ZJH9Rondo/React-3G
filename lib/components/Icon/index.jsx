@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-require('./style/index.less');
+import './style/index.less';
 
 export default class Icon extends Component{
     constructor (props){

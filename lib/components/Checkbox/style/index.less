@@ -1,0 +1,36 @@
+@import '../../../assets/styles/veriable.less';
+
+.mb-checkbox-ctn{
+    .px2rem(padding,10);
+    label{
+        display: inline-block;
+        vertical-align: middle;
+        cursor: default;
+    }
+}
+.mb-checkbox {
+    .px2rem(width,80);
+    .px2rem(height,80);
+    -webkit-appearance: none;
+    display: inline-block;
+    position: relative;
+    .px2rem(margin-right,30);
+    .px2rem(top,30);
+    background-color: #FFFFFF;
+    border: solid 1px #d9d9d9;
+    .px2rem(border-radius,10);
+}
+.mb-checkbox:focus {
+    outline: 0 none;
+}
+.mb-checkbox:checked {
+    background-image: url('../../../assets/images/checkbox.png');
+    background-size: cover;
+    border: 2px solid #1890ff;
+}
+.mb-checkbox:disabled {
+    background-color: #e6e1e1;
+    border: solid 2px #f1efef;
+    background-image: url('../../../assets/images/uncheckbox.png');
+    background-size: cover;
+}

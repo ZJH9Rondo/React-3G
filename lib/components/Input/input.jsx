@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon/index.jsx';
 
-require('./style/index.less');
+import './style/index.less';
 
 export default class Input extends Component {
     constructor (props) {
