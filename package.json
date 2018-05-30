@@ -2,7 +2,7 @@
   "name": "react-3g",
   "version": "1.0.3",
   "description": "基于react开发的基本组件库",
-  "main": "build/main.js",
+  "main": "build/index.js",
   "files": [
     "build"
   ],

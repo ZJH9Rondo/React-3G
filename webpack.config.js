@@ -8,14 +8,20 @@ const assetsPath = path.resolve(srcPath, 'assets');
 const isDev = (process.env.NODE_ENV !== 'production');
 
 module.exports = {
-  entry: [
-    './lib/index'
-  ],
+  entry: {
+    index: './lib/index',
+    //vendors: ['react']
+  },
   output: {
     path: path.join(__dirname, '/build'),
     publicPath: '/',
     libraryTarget: "umd",
     filename: `[name].js`,
+  },
+  externals: {
+    "react": 'react',
+    "react-dom": 'reactDOM',
+    "react-3g": 'react-3g'
   },
   module: {
     rules: [
@@ -92,7 +98,7 @@ module.exports = {
   resolve: {
     modules: [
         "node_modules",
-        path.resolve(__dirname,"lib")
+        path.resolve(__dirname,"/lib")
     ],
     extensions: ['.js','jsx','.less']
   },
@@ -102,7 +108,19 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin(`css/index.css`, {allChunks: true}),
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    //new webpack.optimize.CommonsChunkPlugin({names: ["vendors","webpackassets"]}),
+    new webpack.optimize.UglifyJsPlugin({
+        mangle: {
+            except: ['$super', '$', 'exports', 'require', 'module', '_']
+        },
+        compress: {
+            warnings: false
+        },
+        output: {
+            comments: false,
+        }
+    }),
+    //new webpack.optimize.OccurrenceOrderPlugin(),
     //new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
