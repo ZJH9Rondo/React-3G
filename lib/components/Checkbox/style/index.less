@@ -8,19 +8,22 @@ input[type="checkbox"]{
     vertical-align: middle;
     .mb-checkbox-box{
         display: inline-block;
-        padding-left: 3px;
-        padding-right: 3px;
+        vertical-align: middle;
+        .px2rem(padding-left,20);
+        .px2rem(padding-right,20);
     }
     .mb-checkbox-text{
         display: inline-block;
-        font-size: 20px;
+        vertical-align: middle;
     }
 }
 .mb-checkbox {
     .px2rem(min-width,80);
     .px2rem(min-height,80);
-    display: inline-block;
     -webkit-appearance: none;
+    position: relative;
+    display: inline-block;
+    top: 0.2em;
     background-color: #FFFFFF;
     border: solid 1px #d9d9d9;
     .px2rem(border-radius,10);
