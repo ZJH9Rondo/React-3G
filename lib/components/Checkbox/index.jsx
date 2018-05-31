@@ -9,12 +9,12 @@ export default class Checkbox extends Component{
 
     render() {
         return (
-            <div className="mb-checkbox-ctn">
-                <label>
+            <label className="mb-checkbox-ctn">
+                <span className="mb-checkbox-box">
                     <input className="mb-checkbox" type="checkbox"></input>
-                    复选框
-                </label>
-            </div>
+                </span>
+                <span className="mb-checkbox-text">复选框</span>
+            </label>
         )
     }
 }

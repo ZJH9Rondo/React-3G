@@ -1,21 +1,26 @@
 @import '../../../assets/styles/veriable.less';
 
+input[type="checkbox"]{
+    margin: 0;
+}
 .mb-checkbox-ctn{
-    .px2rem(padding,10);
-    label{
+    display: inline-block;
+    vertical-align: middle;
+    .mb-checkbox-box{
         display: inline-block;
-        vertical-align: middle;
-        cursor: default;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .mb-checkbox-text{
+        display: inline-block;
+        font-size: 20px;
     }
 }
 .mb-checkbox {
-    .px2rem(width,80);
-    .px2rem(height,80);
-    -webkit-appearance: none;
+    .px2rem(min-width,80);
+    .px2rem(min-height,80);
     display: inline-block;
-    position: relative;
-    .px2rem(margin-right,30);
-    .px2rem(top,30);
+    -webkit-appearance: none;
     background-color: #FFFFFF;
     border: solid 1px #d9d9d9;
     .px2rem(border-radius,10);
