@@ -1,29 +1,46 @@
 import React,{ Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icon/index.jsx';
 import classNames from 'classnames';
 
 import './style/index.less';
 
 export default class Button extends Component {
+    /**
+     * 检测默认数据类型 propTypes
+     */
+    static propTypes = {
+        type: PropTypes.string,
+        size: PropTypes.string,
+        /**
+         * icon类型默认值为 null
+        */
+        icon: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.object // 默认值类型
+        ]),
+        onClick:  PropTypes.oneOfType([
+            PropTypes.func,
+            PropTypes.object
+        ])// 父组件传入 eventHandel
+    };
+
+    /**
+     * 组件内部不维持状态，由props控制
+     */
+    static defaultProps = {
+        type: 'success',
+        size: 'mid',
+        icon: null,
+        onClick: null
+    };
+
     constructor (props) {
         super(props);
-        this.state={
-            type: 'success',
-            size: 'mid',
-            icon: 'null'
-        };
-    }
-
-    componentDidMount() {
-        this.setState({
-            type: this.props.type || this.state.type,
-            size: this.props.size || this.state.size,
-            icon: this.props.icon || this.state.icon
-        });
     }
 
     render() {
-        const { type,shape,size,icon } = this.state;
+        const { type, size, icon, onClick } = this.props;
         const buttonClass = classNames({
             [`mb-btn-${size}`]: size,
             [`mb-btn-${type}`]: type,
@@ -37,11 +54,11 @@ export default class Button extends Component {
         /**
          * event 参数捕获
         */
-        const onClick = this.props.onClick ? this.props.onClick : null;
+        const clickhandel = onClick;
 
         return (
             <div>
-                <button className={ buttonClass } onClick = { onClick } disabled={ disabled }>{ mbIcon }{ this.props.children }</button>
+                <button className={ buttonClass } onClick = { clickhandel } disabled={ disabled }>{ mbIcon }{ this.props.children }</button>
             </div>
         )
     }

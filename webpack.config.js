@@ -21,6 +21,7 @@ module.exports = {
   externals: {
     "react": 'react',
     "react-dom": 'reactDOM',
+    "prop-types": 'prop-types',
     "react-3g": 'react-3g'
   },
   module: {
@@ -31,7 +32,7 @@ module.exports = {
           use: {
               loader: 'babel-loader',
               options: {
-                  presets: ['es2015', 'react']
+                  presets: ['es2015', 'react','stage-0']
               }
           }
       },
