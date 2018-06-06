@@ -12,6 +12,7 @@ export default class Button extends Component {
     static propTypes = {
         type: PropTypes.string,
         size: PropTypes.string,
+        children: PropTypes.string,
         /**
          * icon类型默认值为 null
         */
@@ -31,6 +32,7 @@ export default class Button extends Component {
     static defaultProps = {
         type: 'success',
         size: 'mid',
+        children: '确定',
         icon: null,
         onClick: null
     };
@@ -40,7 +42,7 @@ export default class Button extends Component {
     }
 
     render() {
-        const { type, size, icon, onClick } = this.props;
+        const { type, size, icon, children } = this.props;
         const buttonClass = classNames({
             [`mb-btn-${size}`]: size,
             [`mb-btn-${type}`]: type,
@@ -51,14 +53,12 @@ export default class Button extends Component {
         const iconType = (icon == 'loading') ? 'loading' : `${icon}`;
         const disabled = (type == "disabled") ? "disabled" : null;
         const mbIcon = icon ? <Icon type={ iconType } size={ size }/> : null; 
-        /**
-         * event 参数捕获
-        */
-        const clickhandel = onClick;
 
         return (
             <div>
-                <button className={ buttonClass } onClick = { clickhandel } disabled={ disabled }>{ mbIcon }{ this.props.children }</button>
+                <button className={ buttonClass } disabled={ disabled }>
+                    { mbIcon }{ children }
+                </button>
             </div>
         )
     }
