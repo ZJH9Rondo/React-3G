@@ -60,7 +60,7 @@ export default class FormItem extends Component{
         const children = this.emitHandel(this.props.children,this.props.handelFieldChange);
 
         return (
-            <div>
+            <div className="formItem">
                 { children }
             </div>
         )
